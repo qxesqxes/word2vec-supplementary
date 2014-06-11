@@ -6,7 +6,7 @@ word2vec program
 
 https://code.google.com/p/word2vec/
 
-based on, this toolkit, I add two program and modify makefile
+based on, this toolkit, I add three program and modify makefile
 
 
 Install
@@ -22,6 +22,9 @@ See how to use
 python formatCorpus4word2vecProg.py -h
 
 ./distance\_byQueryList
+
+python formatResultFromDistance\_byQueryList.py -h
+
 
 
 
