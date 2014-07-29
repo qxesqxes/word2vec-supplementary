@@ -17,9 +17,11 @@ def format2sortedCosSimilarity(cosDis, outputName):
         elif (lineList[0] == 'Word' or lineList[0] == ''):
             continue
         elif lineList[0] == 'Out':
-            outputStr += '| |'
-        elif not re.match(r'\-+',lineList[0]) is None:
             outputStr += '| '
+        elif not re.match(r'\-+',lineList[0]) is None and len(lineList) == 1:
+            outputStr += '| '
+        elif not re.match(r'\-+|\s+|\++|\*+|\\+|\/+|\^+|\!+|\@+|\#+|\$+\|%+|\&+|\(+|\)+|\|+|\[+|\]+|\{+|\}+|\"+|\'+|\?+|\<+|\>+|\,+|\.+',lineList[0]) is None and len(lineList) == 2:
+            print('filtering non-word: '+lineList[0]+', cosSim: '+lineList[1])
         else:
             outputStr += (lineList[0]+'('+lineList[1]+') ')
     fin.close()
